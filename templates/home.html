@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Smart Parking System</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            background:
+                linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.85)),
+                url("{{ url_for('static', filename='parking-bg.jpg') }}");
+            background-size: cover;
+            background-position: center;
+            color: white;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 60px;
+            background: rgba(0,0,0,0.5);
+            backdrop-filter: blur(10px);
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .nav-btn {
+            padding: 10px 20px;
+            background: linear-gradient(45deg, #00c6ff, #0072ff);
+            border: none;
+            border-radius: 20px;
+            color: white;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .nav-btn:hover {
+            transform: scale(1.05);
+        }
+
+        /* CENTER CONTENT */
+        .hero {
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 60px;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            opacity: 0.8;
+            margin-bottom: 30px;
+        }
+
+        .start-btn {
+            padding: 14px 40px;
+            font-size: 16px;
+            border-radius: 30px;
+            border: none;
+            cursor: pointer;
+            background: linear-gradient(45deg, #00c6ff, #0072ff);
+            color: white;
+            transition: 0.3s;
+        }
+
+        .start-btn:hover {
+            transform: scale(1.05);
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="navbar">
+        <div class="logo">🚗 Smart Parking AI</div>
+        <button class="nav-btn" onclick="location.href='/upload'">
+            Upload Image
+        </button>
+    </div>
+
+    <div class="hero">
+        <h1>SMART PARKING SYSTEM</h1>
+        <p>AI Powered Parking Slot Detection using YOLOv8</p>
+
+        <button class="start-btn" onclick="location.href='/upload'">
+            Start Detection
+        </button>
+    </div>
+
+</body>
+</html>

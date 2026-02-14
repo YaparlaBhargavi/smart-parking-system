@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload | Smart Parking</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background:
+                linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.85)),
+                url("{{ url_for('static', filename='parking-bg.jpg') }}");
+            background-size: cover;
+            background-position: center;
+        }
+
+        .upload-card {
+            width: 420px;
+            padding: 50px 40px;
+            border-radius: 20px;
+            backdrop-filter: blur(20px);
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.2);
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+            animation: fadeIn 1s ease;
+        }
+
+        @keyframes fadeIn {
+            from {opacity: 0; transform: translateY(40px);}
+            to {opacity: 1; transform: translateY(0);}
+        }
+
+        h2 {
+            color: white;
+            font-size: 28px;
+            margin-bottom: 30px;
+            letter-spacing: 1px;
+        }
+
+        /* Custom File Upload */
+        .file-label {
+            display: inline-block;
+            padding: 12px 20px;
+            background: rgba(255,255,255,0.15);
+            border-radius: 30px;
+            cursor: pointer;
+            color: white;
+            transition: 0.3s;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+
+        .file-label:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        input[type="file"] {
+            display: none;
+        }
+
+        .file-name {
+            margin-top: 12px;
+            font-size: 14px;
+            color: #00e0ff;
+        }
+
+        .detect-btn {
+            margin-top: 30px;
+            padding: 12px 35px;
+            font-size: 16px;
+            border-radius: 30px;
+            border: none;
+            cursor: pointer;
+            color: white;
+            background: linear-gradient(45deg, #00c6ff, #0072ff);
+            box-shadow: 0 6px 20px rgba(0,114,255,0.6);
+            transition: 0.3s;
+        }
+
+        .detect-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,114,255,0.9);
+        }
+
+        .back-link {
+            display: block;
+            margin-top: 25px;
+            color: #aaa;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .back-link:hover {
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form class="upload-card" method="POST" action="/detect" enctype="multipart/form-data">
+        <h2>Upload Parking Image</h2>
+
+        <label class="file-label">
+            Choose Image
+            <input type="file" name="image" id="fileInput" required>
+        </label>
+
+        <div class="file-name" id="fileName">No file selected</div>
+
+        <button type="submit" class="detect-btn">Detect Parking Slots</button>
+
+        <a href="/" class="back-link">← Back to Home</a>
+    </form>
+
+<script>
+    const input = document.getElementById("fileInput");
+    const fileName = document.getElementById("fileName");
+
+    input.addEventListener("change", function() {
+        fileName.textContent = this.files[0].name;
+    });
+</script>
+
+</body>
+</html>
