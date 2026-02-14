@@ -1,87 +1,87 @@
-🚗 AI-Powered Smart Parking System
+# 🚗 AI-Powered Smart Parking System
 
-An AI-based Smart Parking System that detects available and occupied parking slots using YOLO Object Detection and Deep Learning.
+An AI-based Smart Parking System that detects available and occupied parking slots using **YOLO Object Detection** and Deep Learning.
 
 This system helps reduce traffic congestion and saves time by automatically identifying empty parking spaces from parking lot images.
 
-📌 Project Overview
+---
 
-Finding parking in crowded areas is time-consuming and stressful.
-This project solves that problem by using Computer Vision and Deep Learning.
+## 📌 Project Overview
 
-The system:
+Finding parking in crowded areas is time-consuming and stressful.  
+This project solves that problem using **Computer Vision and Deep Learning**.
 
-Detects each parking slot
+### 🔹 The System:
 
-Classifies slots as Empty or Occupied
+- Detects each parking slot  
+- Classifies slots as **Empty** or **Occupied**  
+- Highlights empty slots in 🔵 Blue  
+- Highlights occupied slots in 🔴 Red  
+- Displays total, empty, and occupied slot count  
 
-Highlights empty slots in Blue
+---
 
-Highlights occupied slots in Red
+## 🧠 Technologies Used
 
-Displays total, empty, and occupied slot count
+- Python  
+- Flask  
+- OpenCV  
+- YOLO (Ultralytics)  
+- HTML  
+- CSS  
 
-🧠 Technologies Used
+---
 
-Python
+## ⚙️ How It Works
 
-Flask
+1. User uploads a parking lot image  
+2. YOLO model detects parking slots  
+3. System classifies each slot  
+4. Bounding boxes are drawn:
+   - 🔵 Blue → Empty  
+   - 🔴 Red → Occupied  
+5. Results are displayed with slot statistics  
 
-OpenCV
+---
 
-YOLO (Ultralytics)
+## 📂 Project Structure
 
-HTML
-
-CSS
-
-⚙️ How It Works
-
-User uploads a parking lot image.
-
-YOLO model detects parking slots.
-
-The system classifies each slot.
-
-Bounding boxes are drawn:
-
-🔵 Blue → Empty
-
-🔴 Red → Occupied
-
-Results are displayed on a web page with slot counts.
-
-📂 Project Structure
-smart-parking/
+smart-parking-system/
 │
 ├── static/
-│   ├── input.jpg
-│   ├── output.jpg
-│   └── parking-bg.jpg
+│ ├── input.jpg
+│ ├── output.jpg
+│ └── parking-bg.jpg
 │
 ├── templates/
-│   ├── home.html
-│   ├── upload.html
-│   ├── result.html
-│   └── index.html
+│ ├── home.html
+│ ├── upload.html
+│ ├── result.html
+│ └── index.html
 │
 ├── app.py
 ├── best.pt
 └── smart-parking-1.ipynb
 
-🚀 How to Run the Project
-1️⃣ Clone the Repository
+
+---
+
+## 🚀 Installation & Usage
+
+### 1️⃣ Clone Repository
+
+```bash
 git clone https://github.com/YaparlaBhargavi/smart-parking-system.git
 cd smart-parking-system
 
-2️⃣ Install Requirements
+2️⃣ Install Dependencies
 pip install flask opencv-python ultralytics numpy
 
-3️⃣ Run the Application
+3️⃣ Run Application
 python app.py
 
 
-Open browser and go to:
+Open browser and visit:
 
 http://127.0.0.1:5000/
 
@@ -97,25 +97,17 @@ Smart Cities
 
 Industrial Parking Management
 
-💡 Key Features
-
-✔ Real-time detection
-✔ Automatic slot counting
-✔ Web-based interface
-✔ Deep Learning powered
-✔ Easy deployment
-
-📈 Future Improvements
+📈 Future Enhancements
 
 Live CCTV integration
 
-Mobile application support
+Cloud deployment
 
-Database storage for slot history
+Database storage
 
-IoT sensor integration
+Mobile app integration
 
-Real-time cloud deployment
+IoT sensor connectivity
 
 👩‍💻 Author
 
